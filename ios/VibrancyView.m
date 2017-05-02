@@ -1,4 +1,11 @@
-#import <React/RCTComponent.h>
+#if __has_include(<React/RCTComponent.h>)
+  #import <React/RCTComponent.h>
+#elif __has_include("RCTComponent.h")
+  #import "RCTComponent.h"
+#else
+  #import "React/RCTComponent.h"
+#endif
+
 #import "BlurView.h"
 #import "VibrancyView.h"
 
